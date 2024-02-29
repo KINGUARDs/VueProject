@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="app">
+    <input type="text" @@keyup="enableButton" placeolder="請輸入姓名" v-model="name"/>
+    <button v-bind:disabled="disableSubmit" @@click="submit">Submit</button>
+</div>
+
+@section Scripts{
+
+
+    <script>
+        const vueApp = { 
+            data() {
+                return {
+                    name: "",
+                    disableSubmit: true
+                }
+            },
+            methods: {
+                enableButton: function(){ 
+                    this.disableSubmit = (this.name.length > 0) ? false : true;
+                },
+                submit: function () { 
+                    alert("Submit");
+                    this.name = "";
+                    this.disableSubmit = true;
+                }
+            },
+        };
+        const app = Vue.createApp(vueApp).mount("#app");
+    </script>
+}

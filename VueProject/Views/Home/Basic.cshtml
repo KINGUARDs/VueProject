@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="app">
+    <label>{{ message }}</label>
+    <img v-bind:src="photo" v-bind:title="description"/>
+</div>
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.19/vue.global.min.js" integrity="sha512-ReJjcjCoBGEtlk7lUMvDgOkjxn/sKRn4oed9Ae/z1fthxDv90bK8nAxR9OeJejHl61kIe3QRwKMqnkHXGn9j5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        let vueApp = {
+            data() {
+                return {
+                    message: "Hello Vue3!",
+                    photo:'@Url.Content("~/images/pic.png")',
+                    description:"這是VUE"
+                };
+            }
+        };
+        let app = Vue.createApp(vueApp).mount("#app");
+    </script>
+}

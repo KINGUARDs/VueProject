@@ -1,0 +1,19 @@
+﻿<div id="app">
+    <div>您選擇了: {{ selected }}</div>
+    <label>國家:</label>
+    <select asp-items="@ViewBag.Country" v-model="selected"></select>    
+</div>
+
+
+@section Scripts{
+    <script>
+        const vueApp ={
+            data(){
+                return {
+                    selected: "未選擇"
+                };
+            }
+        }
+        let app = Vue.createApp(vueApp).mount('#app');
+    </script>
+}

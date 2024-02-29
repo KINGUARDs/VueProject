@@ -1,0 +1,38 @@
+﻿<div id="app">
+    <h5>{{ FirstName }}</h5>
+    <h5>{{ LastName }}</h5>
+    <h5>{{ getFullName() }}</h5>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.19/vue.global.min.js" integrity="sha512-ReJjcjCoBGEtlk7lUMvDgOkjxn/sKRn4oed9Ae/z1fthxDv90bK8nAxR9OeJejHl61kIe3QRwKMqnkHXGn9j5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let vueApp = {
+            data() {
+                return {
+                    FirstName: "John",
+                    LastName: "Doe",
+                    Salary:40000
+                };
+            },
+            props: { 
+                Pay: { type:Number,default:28000}
+            },
+            computed: {
+                Monthly(){ 
+                    return this.Salary + 1000;
+                }
+            },
+            methods: {
+                getFullName : function () { 
+                    return `${this.FirstName} ${this.LastName}`;
+                }
+            },
+        };
+        let app = Vue.createApp(vueApp).mount("#app");
+        console.log(app.Salary);
+        console.log(app.Pay);
+        console.log(app.Monthly);
+    </script>
+}

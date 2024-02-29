@@ -1,0 +1,26 @@
+﻿
+<div id="app">
+    <h3>{{ count }}</h3>
+    <h3 v-once>{{ count }}</h3>
+    <button v-on:click="add"> +1 </button>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.19/vue.global.min.js" integrity="sha512-ReJjcjCoBGEtlk7lUMvDgOkjxn/sKRn4oed9Ae/z1fthxDv90bK8nAxR9OeJejHl61kIe3QRwKMqnkHXGn9j5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        const vueApp = {
+            data() { 
+                return {
+                    count : 0,
+                }
+            },
+            methods: {
+                add: function () { 
+                    this.count++;
+                }
+            }
+        }
+        const app = Vue.createApp(vueApp).mount('#app');
+    </script>
+}

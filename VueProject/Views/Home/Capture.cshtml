@@ -1,0 +1,31 @@
+﻿
+<div id="app">
+    <div v-on:keyup.capture.stop="keyup">
+        <input type="text" v-on:keyup="inputKeyUp1" />
+        <input type="text" v-on:keyup="inputKeyUp2" />
+        <input type="text" v-on:keyup="inputKeyUp3" />
+    </div>
+</div>
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.19/vue.global.min.js" integrity="sha512-ReJjcjCoBGEtlk7lUMvDgOkjxn/sKRn4oed9Ae/z1fthxDv90bK8nAxR9OeJejHl61kIe3QRwKMqnkHXGn9j5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        let vueApp = {
+            methods: {
+                keyup: function() { 
+                    alert("key up");
+                },         
+                inputKeyUp1: function () { 
+                    alert("Input1 Key Up")
+                },
+                inputKeyUp2: function () { 
+                    alert("Input2 Key Up")
+                },
+                inputKeyUp3: function () { 
+                    alert("Input3 Key Up")
+                }
+            }
+        };
+        let app = Vue.createApp(vueApp).mount("#app");
+    </script>
+}

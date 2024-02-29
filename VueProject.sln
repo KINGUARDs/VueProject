@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueProject", "VueProject\VueProject.csproj", "{EBC24F68-0AD0-4DFF-AF6B-1F60B9769070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front", "Front\Front.csproj", "{7E45D4EF-736B-4859-A7B1-C667716977AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Back", "Back\Back.csproj", "{B6778966-AA27-4103-A836-4EF64C62971B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBC24F68-0AD0-4DFF-AF6B-1F60B9769070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC24F68-0AD0-4DFF-AF6B-1F60B9769070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC24F68-0AD0-4DFF-AF6B-1F60B9769070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC24F68-0AD0-4DFF-AF6B-1F60B9769070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E45D4EF-736B-4859-A7B1-C667716977AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E45D4EF-736B-4859-A7B1-C667716977AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E45D4EF-736B-4859-A7B1-C667716977AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E45D4EF-736B-4859-A7B1-C667716977AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6778966-AA27-4103-A836-4EF64C62971B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6778966-AA27-4103-A836-4EF64C62971B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6778966-AA27-4103-A836-4EF64C62971B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6778966-AA27-4103-A836-4EF64C62971B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55762866-25D9-45ED-8800-06F9E5E74F64}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,50 @@
+﻿<div id="app">
+    <label class="form-label">美金兌台幣的匯率:</label>
+    <input type="text" v-model="Rate" class="form-control"/>
+    <label class="form-label">台幣:</label>
+    <input type="text" v-model="TWD" class="form-control" />
+    <label class="form-label">美金:</label>
+    <input type="text" v-model="USD" class="form-control" />
+
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.19/vue.global.min.js" integrity="sha512-ReJjcjCoBGEtlk7lUMvDgOkjxn/sKRn4oed9Ae/z1fthxDv90bK8nAxR9OeJejHl61kIe3QRwKMqnkHXGn9j5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let vueApp  = { 
+            data(){
+                return {
+                    Rate: 31,
+                    TWD : 0,
+                    USD: 0
+                }
+            },
+            watch: {
+                TWD(newVal, oriVal) { 
+                    this.USD = newVal / this.Rate;
+                },
+                USD(newVal, oriVal) {
+                    this.TWD = newVal * this.Rate;
+                },
+                Rate(newVal, oriVal) { 
+                    this.TWD = newVal * this.USD 
+                }
+            },
+            mounted: function () {
+                const uri = "https://localhost:7263/home/Rate";
+                axios.get(uri)
+                .then(response => { 
+                    this.Rate = response.data;
+                })
+                .catch(err => { 
+                    alert(err);
+                })
+
+            }
+        };
+        let app = Vue.createApp(vueApp).mount('#app');
+
+    </script>
+}
