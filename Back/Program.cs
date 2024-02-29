@@ -10,7 +10,16 @@ namespace Back
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            var MyAllowSpecifications = "AllowAny";
             // Add services to the container.
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(
+                        name: MyAllowSpecifications,
+                        policy => policy.WithOrigins("https://localhost:7113").WithHeaders("*").WithMethods("*")
+                    );
+            });
             builder.Services.AddDbContext<NorthwindContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Northwind")));
 
@@ -24,6 +33,8 @@ namespace Back
 
             var app = builder.Build();
 
+
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -31,6 +42,8 @@ namespace Back
                 app.UseSwaggerUI();
             }
 
+
+            app.UseCors();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
