@@ -1,6 +1,7 @@
 
 using Back.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 namespace Back
 {
@@ -48,7 +49,13 @@ namespace Back
 
             app.UseAuthorization();
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(builder.Environment.ContentRootPath, "StaticFiles")),
+                RequestPath = "/StaticFiles"
 
+            });
             app.MapControllers();
 
             app.Run();

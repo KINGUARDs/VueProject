@@ -25,8 +25,6 @@ public partial class NorthwindContext : DbContext
             entity.Property(e => e.CategoryName)
                 .IsRequired()
                 .HasMaxLength(15);
-            entity.Property(e => e.Description).HasColumnType("ntext");
-            entity.Property(e => e.Picture).HasColumnType("image");
         });
 
         OnModelCreatingPartial(modelBuilder);
